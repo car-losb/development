@@ -61,6 +61,36 @@ function App() {
     }
   };
 
+  const filteredClothingData = clothingData
+    .filter((item) => {
+      if (selectedCategories.length === 0) return true;
+      return selectedCategories.includes(item.type);
+    })
+    .filter((item) => item.price <= maxPrice)
+    .sort((a, b) => {
+      if (sortBy === "price") {
+        return a.price - b.price;
+      }
+      return 0;
+    });
+
+    const handleReset = () => {
+      setSelectedCategories([]);
+      setMaxPrice(10);
+      setSortBy(null);
+    };
+
+    const removeFromCart = (item) => {
+      const itemIndex = cartItems.findIndex((cartItem) => cartItem.item === item);
+      if (itemIndex !== -1) {
+          const updatedCart = [...cartItems];
+          const removedItem = updatedCart.splice(itemIndex, 1)[0];
+          setCartItems(updatedCart);
+          setTotal((prevTotal) =>
+              parseFloat((prevTotal - removedItem.item.price * removedItem.quantity).toFixed(2))
+          );
+      }
+  };
 
   return (
     <div className="App">
@@ -121,30 +151,28 @@ function App() {
               Price
             </div>
           </div>
-          
+
+          <div className="reset">
+          <button onClick={handleReset}>Reset</button>
+          </div>
+
         </div>
 
-      <div className="item-container">
-          {clothingData.map((item, index) => {
-            if (
-              (selectedCategories.length === 0 ||
-              selectedCategories.includes(item.type)) &&
-              item.price <= maxPrice
-            ) {
-              return (
-                <ClothingItem
-                  key={index}
-                  image={item.image}
-                  name={item.name}
-                  description={item.description}
-                  price={item.price}
-                  pastry={item}
-                  addToCart={addToCart}
-                />
-              );
-            }
-            return null;
-          })}
+        <div className="item-container">
+          {filteredClothingData.map((item, index) => (
+            <ClothingItem
+              key={index}
+              image={item.image}
+              name={item.name}
+              type={item.type}
+              price={item.price}
+              clothing={item}
+              addToCart={addToCart}
+              removeFromCart={removeFromCart}
+              inCart={cartItems.some((cartItem) => cartItem.item === item)}
+
+            />
+          ))}
         </div>
 
       <div className="Cart">
@@ -152,7 +180,7 @@ function App() {
         <ul>
             {cartItems.map((cartItem, index) => (
                <li>
-               {cartItem.quantity}x - {cartItem.item.name}
+               ({cartItem.quantity}) - {cartItem.item.name}
              </li>
             ))}
         </ul>
