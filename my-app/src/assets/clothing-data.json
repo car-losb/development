@@ -1,0 +1,74 @@
+[
+    {
+      "name": "Beanie",
+      "type": "Headwear",
+      "price": 7.99,
+      "image": "images/beanie.png"
+    },
+    {
+      "name": "Beret",
+      "type": "Headwear",
+      "price": 4.99,
+      "image": "images/beret.png"
+    },
+    {
+      "name": "Bermuda Shorts",
+      "type": "Bottoms",
+      "price": 2.99,
+      "image": "images/connie.png"
+    },
+    {
+      "name": "Cycle T-Shirt",
+      "type": "Tops",
+      "price": 5.99,
+      "image": "images/clothing.png"
+    },
+    {
+      "name": "Bucket Hat",
+      "type": "Headwear",
+      "price": 3.99,
+      "image": "images/hat (1).png"
+    },
+    {
+      "name": "Snow Hat",
+      "type": "Headwear",
+      "price": 4.99,
+      "image": "images/hat.png"
+    },
+    {
+      "name": "Long Skirt",
+      "type": "Bottoms",
+      "price": 4.99,
+      "image": "images/long-skirt.png"
+    },
+    {
+      "name": "Blue Shorts",
+      "type": "Bottoms",
+      "price": 2.99,
+      "image": "images/shorts.png"
+    },
+    {
+      "name": "Muscle T-Shirt",
+      "type": "Tops",
+      "price": 1.99,
+      "image": "images/sleeveless.png"
+    },
+    {
+      "name": "Red Shirt",
+      "type": "Tops",
+      "price": 3.99,
+      "image": "images/t-shirt.png"
+    },
+    {
+      "name": "Underwear",
+      "type": "Bottoms",
+      "price": 2.99,
+      "image": "images/underwear.png"
+    },
+    {
+      "name": "Drip T-Shirt",
+      "type": "Tops",
+      "price": 2.99,
+      "image": "images/wet.png"
+    }
+]

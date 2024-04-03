@@ -1,0 +1,86 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  padding-top: 20px; 
+}
+
+h1 {
+  margin-bottom: 20px; 
+}
+
+.content {
+  display: flex;
+}
+
+.item-container {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ClothingItem {
+  width: 33%;
+  min-width: 200px;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: pink;
+  display: flex;
+  flex-direction: column; 
+}
+
+.ClothingItem img {
+  width: 100%;
+  height: auto;
+}
+
+.ClothingItem button {
+  width: 40%;
+  height: 40%;
+  border-radius: 4px;
+  border: 0px;
+  background-color: rgba(147, 250, 250, 0.65);
+  margin-left: auto; 
+}
+
+.price-cart {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  margin-top: auto; 
+}
+
+.Cart {
+  flex: 1; 
+  padding-left: 20px; 
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.bubble {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: blue;
+  color: white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
