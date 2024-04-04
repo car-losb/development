@@ -4,17 +4,19 @@ import clothingData from "./assets/clothing-data.json";
 import ClothingItem from "./components/ClothingItem";
 
 function App() {
-  // TODO: use useState to create a state variable to hold the state of the cart
-  /* add your cart state code here */
   clothingData.forEach((item) => {
     item.image = process.env.PUBLIC_URL + item.image;
   });
+
+  // Constants to keep track of values using useState
 
   const [total, setTotal] = useState(0);
   const [cartItems, setCartItems] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [maxPrice, setMaxPrice] = useState(10);
   const [sortBy, setSortBy] = useState(null);
+
+  // Add to cart function
 
   const addToCart = (item) => {
 
@@ -39,6 +41,8 @@ function App() {
 
   };
 
+  // Categorical filtering function
+
   const handleCategoryClick = (category) => {
     setSelectedCategories((prevCategories) => {
       if (prevCategories.includes(category)) {
@@ -49,9 +53,13 @@ function App() {
     });
   };
 
+  // Price filtering function
+
   const handlePriceChange = (e) => {
     setMaxPrice(parseFloat(e.target.value));
   };
+
+  // Price sorting function
 
   const handleSortByPrice = () => {
     if (sortBy === "price") {
@@ -60,6 +68,8 @@ function App() {
       setSortBy("price"); // Select if not selected
     }
   };
+
+  // Filter clothing item cards function
 
   const filteredClothingData = clothingData
     .filter((item) => {
@@ -74,11 +84,15 @@ function App() {
       return 0;
   });
 
+  // Reset button function
+
   const handleReset = () => {
       setSelectedCategories([]);
       setMaxPrice(10);
       setSortBy(null);
   };
+
+  // Remove from cart function
 
   const removeFromCart = (item) => {
       const itemIndex = cartItems.findIndex((cartItem) => cartItem.item === item);
@@ -91,6 +105,8 @@ function App() {
           );
       }
   };
+
+  //Empty Cart function
 
   const emptyCart = () => {
     setCartItems([]);
