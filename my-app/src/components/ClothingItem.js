@@ -4,15 +4,17 @@ export default function ClothingItem(props) {
 
     return (
         <div className="ClothingItem">
-            <img src={props.image}></img>
-            <p>{props.name}</p>
+            <div className="picture">
+                <img src={props.image}></img>
+            </div>
+            <h1>{props.name}</h1>
             <p>{props.type}</p>
+            <p>${props.price}</p>
             <div className= "price-cart">
-                <p>{props.price}</p>
+                <button onClick={() => props.addToCart(props.clothing)}>Add to Cart</button>
                 {props.inCart ? (
                     <button className="remove" onClick={() => props.removeFromCart(props.clothing)}>Remove</button>
                 ) : null}
-                <button onClick={() => props.addToCart(props.clothing)}>Add to Cart</button>
             </div>
         </div>
     )

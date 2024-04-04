@@ -15,13 +15,13 @@
       "name": "Bermuda Shorts",
       "type": "Bottoms",
       "price": 2.99,
-      "image": "images/connie.png"
+      "image": "images/bermuda.png"
     },
     {
       "name": "Cycle T-Shirt",
       "type": "Tops",
       "price": 5.99,
-      "image": "images/clothing.png"
+      "image": "images/clothes.png"
     },
     {
       "name": "Bucket Hat",

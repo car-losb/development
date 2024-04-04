@@ -7,7 +7,7 @@ function App() {
   // TODO: use useState to create a state variable to hold the state of the cart
   /* add your cart state code here */
   clothingData.forEach((item) => {
-    item.image = process.env.PUBLIC_URL + "/" + item.image;
+    item.image = process.env.PUBLIC_URL + item.image;
   });
 
   const [total, setTotal] = useState(0);
@@ -72,15 +72,15 @@ function App() {
         return a.price - b.price;
       }
       return 0;
-    });
+  });
 
-    const handleReset = () => {
+  const handleReset = () => {
       setSelectedCategories([]);
       setMaxPrice(10);
       setSortBy(null);
-    };
+  };
 
-    const removeFromCart = (item) => {
+  const removeFromCart = (item) => {
       const itemIndex = cartItems.findIndex((cartItem) => cartItem.item === item);
       if (itemIndex !== -1) {
           const updatedCart = [...cartItems];
@@ -92,9 +92,20 @@ function App() {
       }
   };
 
+  const emptyCart = () => {
+    setCartItems([]);
+    setTotal(0);
+  };
+
   return (
     <div className="App">
-      <h1>Eco Fashion</h1> {/* TODO: personalize your bakery (if you want) */}
+      <div className="banner">
+      <h1>Eco-Fashion</h1> 
+      <img
+          src={process.env.PUBLIC_URL + "/images/recycle-shirt-logo.webp"}
+          alt="Recycle Shirt Logo"
+        />
+      </div>
       <div className="content">
 
       <div className="filters">
@@ -184,7 +195,10 @@ function App() {
              </li>
             ))}
         </ul>
-        <h3>Total: {total}</h3>
+        <div className="cart-footer">
+          <h3>Total: {total}</h3>
+          <button onClick={emptyCart}>Empty Cart</button>
+        </div>
       </div>
       </div>
     </div>
