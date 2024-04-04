@@ -6,6 +6,8 @@
   align-items: flex-start; 
 }
 
+/* Banner */
+
 .banner {
   font-family: 'Nunito', sans-serif; 
   font-size: 20px;
@@ -26,6 +28,8 @@
   height: auto;
 }
 
+/* Filters/Sorting */
+
 .filters {
   margin-left: 20px;
   margin-right: 20px;
@@ -37,6 +41,8 @@
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
+
+/* Clothing Items/Cartds */
 
 .content {
   font-family: 'Nunito', sans-serif;
@@ -97,6 +103,7 @@
 .ClothingItem p {
   margin-top: 0px; 
 }
+
 .price-cart {
   display: flex;
   align-items: center; 
@@ -104,12 +111,14 @@
   margin-top: 0px; 
 }
 
+/* Shopping Cart */
+
 .Cart {
   width: 30%;
   height: auto;
   padding-left: 0px;
   padding-bottom: 20px;
-  margin: 0; /* Add this line to reset margin */
+  margin: 0; 
   border: 1px solid #ccc;
 }
 
@@ -122,17 +131,16 @@
   background-color: #ccc;
   width: auto;
   padding: 10px;
-  margin: 0; /* Add this line to reset margin */
+  margin: 0; 
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-
 .Cart button {
   color: black;
   border: 0.5px solid black;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Add shadow effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
   background-color: white;
   padding: 10px 20px;
   cursor: pointer;
@@ -149,6 +157,8 @@
 .App-link {
   color: #61dafb;
 }
+
+/* Filter Options */
 
 .bubble {
   display: inline-block;
@@ -173,7 +183,7 @@
 .reset button {
   color: black;
   border: 0.5px solid black;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Add shadow effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
   background-color: transparent;
   padding: 10px 20px;
   cursor: pointer;
